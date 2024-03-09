@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/login.css'%}">
+    <title>Connexion</title>
+</head>
+<body>
+
+  <div class="form_container">
+    <form method="post" action="{% url 'login' %}">
+      <h1>Connexion</h1>
+  
+      {% csrf_token %}
+  
+      {% with field=form.username %}
+        <label for="{{ field.id_for_label }}">Email:</label>
+        {{ field }}
+        {% if field.errors %}
+          <div class="alert_error">
+            {% for error in field.errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      <br>
+  
+      {% with field=form.password %}
+        <label for="{{ field.id_for_label }}">Mot de passe:</label>
+        {{ field }}
+        {% if field.errors %}
+          <div class="alert_error">
+            {% for error in field.errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      <br>
+  
+      {% if form.non_field_errors %}
+        <div class="alert_error">
+          {% for error in form.non_field_errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+  
+      <div class="zon_btn_connect">
+        <button type="submit">Connexion</button>
+      </div>
+  
+      <p>Pas encore inscrit ? <a href="{% url 'register' %}">Inscrivez-vous ici</a>.</p>
+  
+    </form>
+  </div>
+
+</body>
+</html>
