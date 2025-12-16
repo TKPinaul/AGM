@@ -1,0 +1,163 @@
+body {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    background-color: rgb(201, 240, 230);
+}
+
+.Usercompte {
+    text-align: center;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image-container {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+
+#profile-image-input {
+    display: none;
+}
+
+.Welcome h1 {
+    color: rgb(27, 45, 73);
+    font-weight: bold;
+    font-size: 80px;
+    margin-top: 20px;
+}
+
+.attribute-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.label-user {
+    margin: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-label-user {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+.info-label-U {
+    width: 30%;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+footer {
+    background-color: #2d3d46;
+    /* Couleur verte sombre */
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    margin-right: 10px
+}
+
+#btn-retour,
+.btn-modifier,
+.btn-completer,
+.btn-deconnect {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-modifier {
+    background-color: #007bff;
+}
+
+.btn-modifier:hover {
+    background-color: #003c7c;
+}
+
+.btn-completer {
+    background-color: #28a745;
+}
+
+.btn-completer:hover {
+    background-color: #1a6d2d;
+}
+
+.btn-deconnect {
+    background-color: rgb(196, 115, 9);
+}
+
+.btn-deconnect:hover {
+    background-color: rgb(153, 128, 17);
+}
+
+#btn-retour {
+    background-color: rgb(116, 116, 116);
+}
+
+#btn-retour:hover {
+    background-color: rgb(43, 43, 42);
+}
+
+@media (max-width: 800px) {
+    .Welcome {
+        font-size: 18px;
+    }
+    .info-label-U {
+        width: 100%;
+    }
+}

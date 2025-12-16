@@ -1,0 +1,102 @@
+{% extends 'page_appel/navbar.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login.css'%}">
+    {% block title %} Home {% endblock title %}
+</head>
+<body>
+    {% block content %}
+
+    <div class="image-slider-container">
+        <div class="image-slider">
+            <div class="slide" id="slide1">
+                <img src="{% static '/media/image/sante.jpg' %}" alt="" class="current-slide">
+            </div>
+            <div class="slide" id="slide2">
+                <img src="{% static '/media/image/labo.jpeg' %}" alt="">
+            </div>
+            <div class="slide" id="slide3">
+                <img src="{% static '/media/image/corp.jpeg' %}" alt="">
+            </div>
+            <div class="slide" id="slide4">
+                <img src="{% static '/media/image/medcine2.jpeg' %}" alt="">
+            </div>
+            <div class="slide" id="slide5">
+                <img src="{% static '/media/image/cardiaque.jpeg' %}" alt="">
+            </div>
+        </div>
+        <button class="prev-button" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next-button" onclick="changeSlide(1)">&#10095;</button>
+        <div class="radio-buttons">
+            <input type="radio" name="slide" id="radio1" checked>
+            <input type="radio" name="slide" id="radio2">
+            <input type="radio" name="slide" id="radio3">
+            <input type="radio" name="slide" id="radio4">
+            <input type="radio" name="slide" id="radio5">
+        </div>        
+    </div>
+    
+    <div class="body_accueil">
+        <div class="accueil_containt">
+            <a href="#" class="a_bouton">
+                <div class="containt_zone">
+                    <div class="Containt">
+                        <h1>Consultation</h1> 
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="a_bouton">
+                <div class="containt_zone">
+                    <div class="Containt">
+                        <h1>Analyse</h1> 
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="a_bouton">
+                <div class="containt_zone">
+                    <div class="Containt">
+                        <h1>Suivi Medical</h1> 
+                    </div>
+                </div>
+            </a>
+            <br>
+            <a href="#" class="a_bouton">
+                <div class="containt_zone">
+                    <div class="Containt">
+                        <h1>Alimentation</h1> 
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'rendezVous' user_id=user_id %}" class="a_bouton">
+                <div class="containt_zone">
+                    <div class="Containt">
+                        <h1>rendez-vous</h1> 
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="a_bouton">
+                <div class="containt_zone">
+                    <div class="Containt">
+                        <h1>Conseille</h1> 
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="a_bouton">
+                <div class="containt_zone">
+                    <div class="Containt">
+                        <h1>Localisation</h1> 
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    {% endblock content %}
+</body>
+</html>
+    

@@ -1,0 +1,123 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(190, 211, 186);
+}
+
+.image-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Ajout pour masquer les images débordantes */
+}
+
+.image-slider {
+    display: flex;
+    width: 500%; /* Largeur totale pour afficher une image à la fois */
+    transition: transform 0.5s ease-in-out; /* Animation de transition */
+}
+
+.image-slider .slide {
+    flex: 0 0 20%; /* Ajustez la largeur selon le nombre d'images */
+    box-sizing: border-box;
+}
+
+.image-slider .slide img {
+    width: 100%;
+    height: 450px;
+}
+
+.radio-buttons {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.radio-buttons input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgb(37, 247, 184);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.radio-buttons input[type="radio"]:checked {
+    background-color: rgb(0, 255, 242);
+}
+
+.prev-button,
+.next-button {
+    top: 45%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    color: #49fdc7;
+    border: 2px;
+    border-color: #ffffff;
+    border-radius: 60%;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(1px);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.body_accueil {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.accueil_containt {
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+}
+
+.a_bouton {
+    text-decoration: none;
+    color: inherit;
+}
+
+.containt_zone {
+    width: 15rem;
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    outline-offset: -0rem;
+    outline: .1rem solid #ccc;
+    background-color: rgb(204, 252, 230);
+    box-shadow: 0.5rem 0.5rem rgba(140, 221, 187, 0.603);
+}
+
+.containt_zone:hover {
+    outline: .2rem solid #73f8aa;
+    outline-offset: -0rem;
+}
+
+.a_bouton:hover {
+    color: #0bce5c;
+}

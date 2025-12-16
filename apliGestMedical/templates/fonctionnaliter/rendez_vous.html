@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/CSS/rendez_vous.css' %}">
+    <title> Fiche de Rendez-vous </title>
+</head>
+<body class="RDV">
+    <div class="form_container">
+        <form method="post" action="{% url 'rendezVous' user_id=user_id %}" enctype="multipart/form-data">
+            
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div class="zon_btn_connect">
+                <button type="submit">Prendre rendez-vous</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'CSS/login.css'%}">
+  <title>Inscription</title>
+</head>
+<body>
+
+  <div class="form_container">
+
+    <form method="post" action="{% url 'register' %}">
+    <h1>Inscription</h1>
+
+    {% csrf_token %}
+
+    {% with field=form.nom %}
+      <label for="{{ field.id_for_label }}">Nom:</label>
+      {{ field }}
+    {% endwith %}
+    <br />
+
+    {% with field=form.prenom %}
+      <label for="{{ field.id_for_label }}">Prénom:</label>
+      {{ field }}
+    {% endwith %}
+    <br />
+
+    {% with field=form.email %}
+      <label for="{{ field.id_for_label }}">Email:</label>
+      {{ field }}
+      {% if field.errors %}
+        <div class="alert_error">
+          {% for error in field.errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <br />
+
+    {% with field=form.password1 %}
+      <label for="{{ field.id_for_label }}">Mot de passe:</label>
+      {{ field }}
+      {% if field.errors %}
+        <div class="alert_error">
+          {% for error in field.errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <br />
+
+    {% with field=form.password2 %}
+      <label for="{{ field.id_for_label }}">Confirmer le mot de passe:</label>
+      {{ field }}
+      {% if field.errors %}
+        <div class="alert_error">
+          {% for error in field.errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <br />
+
+    <div class="zon_btn_connect">
+      <button type="submit">S'inscrire</button>
+    </div>
+    
+    <p>Vous disposer d'un compte ? <a href="{% url 'login' %}">Connectez-vous ici</a>.</p>
+    </form>
+
+  </div>
+
+</body>
+</html>

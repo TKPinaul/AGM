@@ -1,0 +1,56 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/CSS/userCompte.css'%}">
+    <title> My Compte </title>
+</head>
+<body class="Usercompte">
+    <div class="center-div">
+        <div class="profile-image-container">
+            <input type="file" id="profile-image-input" accept="image/*" style="display:none">
+            <label for="profile-image-input">
+                <div class="profile-image" id="profile-image">
+                    {% if user.profile_image %}
+                        <img src="{{ user.profile_image.url }}" alt="Profile Image">
+                    {% else %}
+                        <!-- Image par défaut si aucune image n'est définie -->
+                        <img src="{% static 'media/image/count.png' %}" alt="Default Profile Image">
+                    {% endif %}
+                </div>
+            </label>
+        </div>
+    </div>
+    <h1 class="Welcome">Bienvenue sur votre compte !</h1>
+    <div class="attibut-user">
+        <div class="label-user">
+            <label class="title-label-user"> Nom </label>
+            <input name="nom_user" type="text" class="info-label-U" value="{{user.nom}}" disabled>
+        </div>
+        <div class="label-user">
+            <label class="title-label-user"> Prenom </label>
+            <input name="prenom_user" type="text" class="info-label-U" value="{{user.prenom}}" disabled>
+        </div>
+        <div class="label-user">
+            <label class="title-label-user"> Mail </label>
+            <input name="email_user" type="text" class="info-label-U" value="{{user.email}}" disabled>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <button id="btn-retour" class="footer-left">Retour</button>
+            <div class="footer-right">
+                <button class="btn-modifier">Modifier</button>
+                <button class="btn-completer">Compléter</button>
+                <button class="btn-deconnect">Deconnexion</button>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static '/JS/userCompte.js' %}"></script>
+</body>
+</html>
+
